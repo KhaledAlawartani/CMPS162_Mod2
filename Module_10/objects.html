@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <script>
+        //Opens the window and assigns the size of said window
+        var myWindow;
+            function fnOpenWindow() {
+                myWindow = window.open("", "", "width=500, height=500");
+            }
+
+        //Closes said window
+        function fnCloseWindow() {
+            if(myWindow) {
+                myWindow.close();
+            }
+        }
+
+        //Validates said window
+        function fnCheckWindow() {
+            flag = "";
+                if(!myWindow){
+                    flag = "was never open";
+                } else {
+                    if(!myWindow.open){
+                        flag = "is closed";
+                    }else {
+                        flag = "is opened";
+                    }
+                }
+                document.getElementById("flag").innerHTML = "myWindow " + flag;
+        }
+    </script>
+</head>
+<body>
+    <h1>Module 10: Browser Control</h1>
+    <button onclick="fnOpenWindow()">Open Widnow</button>
+    <button onclick="fnCloseWindow()">Close Widnow</button>
+    <button onclick="fnCheckWindow()">Validate Widnow</button>
+<br>
+    <div id="flag"></div>
+</body>
+</html>
